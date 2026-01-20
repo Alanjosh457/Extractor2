@@ -64,7 +64,7 @@ app.post(
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
         originalname.toLowerCase().endsWith(".docx")
       ) {
-        const result = await mammoth.extractRawText({ buffer });
+        const result = await mammoth.extractRawText({ buffer, ignoreEmptyParagraphs: true });
         text = result.value;
       }
 
